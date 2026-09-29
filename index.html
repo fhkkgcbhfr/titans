@@ -1,290 +1,342 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-<title>Trade With Munaaf</title>
+<title>AdBuildAgency | Learning Community</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+fbq('init','27880177998327946');
+fbq('track','PageView');
+</script>
+
+<noscript>
+<img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=27880177998327946&ev=PageView&noscript=1"/>
+</noscript>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
 <style>
 
+:root{
+    --bg:#050507;
+    --card:rgba(17,18,24,.88);
+    --gold:#ffd43b;
+    --gold2:#b8860b;
+    --white:#fff;
+    --muted:#9ca3af;
+    --border:rgba(255,212,59,.25);
+}
+
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    -webkit-tap-highlight-color:transparent;
 }
 
 body{
-background:
-linear-gradient(135deg,#020617,#0f172a,#111827);
-min-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-padding:20px;
-overflow:hidden;
-color:#fff;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:18px 12px;
+    font-family:'Plus Jakarta Sans',sans-serif;
+    color:var(--white);
+    background:
+        radial-gradient(circle at 50% 0%,rgba(255,212,59,.16),transparent 45%),
+        radial-gradient(circle at 0% 100%,rgba(184,134,11,.10),transparent 40%),
+        #050507;
 }
 
-/* GLOW */
-
-.blur1,
-.blur2{
-position:fixed;
-border-radius:50%;
-filter:blur(90px);
-z-index:-1;
+.wrapper{
+    width:100%;
+    max-width:430px;
 }
-
-.blur1{
-width:260px;
-height:260px;
-background:#22c55e;
-top:-80px;
-left:-80px;
-opacity:0.25;
-}
-
-.blur2{
-width:260px;
-height:260px;
-background:#3b82f6;
-bottom:-100px;
-right:-100px;
-opacity:0.25;
-}
-
-/* CARD */
 
 .card{
-width:100%;
-max-width:430px;
-
-background:rgba(255,255,255,0.06);
-backdrop-filter:blur(16px);
-
-border:1px solid rgba(255,255,255,0.08);
-
-border-radius:28px;
-
-padding:30px 24px;
-
-box-shadow:
-0 15px 50px rgba(0,0,0,0.6),
-inset 0 1px 1px rgba(255,255,255,0.08);
-
-text-align:center;
-
-position:relative;
-overflow:hidden;
+    position:relative;
+    overflow:hidden;
+    text-align:center;
+    padding:32px 20px 22px;
+    border-radius:28px;
+    background:var(--card);
+    border:1px solid var(--border);
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.65),
+        0 0 35px rgba(255,212,59,.08);
+    backdrop-filter:blur(20px);
 }
 
-/* TOP TAG */
-
-.top-tag{
-display:inline-block;
-padding:8px 16px;
-border-radius:50px;
-font-size:12px;
-font-weight:700;
-background:rgba(34,197,94,0.12);
-border:1px solid rgba(34,197,94,0.3);
-color:#4ade80;
-margin-bottom:18px;
+.card:before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:12%;
+    width:76%;
+    height:2px;
+    background:linear-gradient(
+        90deg,
+        transparent,
+        #ffd43b,
+        #fff2a6,
+        #ffd43b,
+        transparent
+    );
 }
 
-/* LOGO */
+/* Logo */
 
-.logo-wrap{
-display:flex;
-justify-content:center;
-margin-bottom:15px;
+.logo-box{
+    position:relative;
+    width:104px;
+    height:104px;
+    margin:0 auto 15px;
+}
+
+.logo-glow{
+    position:absolute;
+    inset:-7px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#fff0a0,#d4af37,#8b6508);
+    filter:blur(13px);
+    opacity:.55;
+    animation:glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes glow{
+    from{transform:scale(.97);opacity:.40}
+    to{transform:scale(1.04);opacity:.72}
 }
 
 .logo{
-width:90px;
-height:90px;
-border-radius:50%;
-border:3px solid #facc15;
-padding:4px;
-object-fit:cover;
-
-box-shadow:
-0 0 25px rgba(250,204,21,0.4);
+    position:relative;
+    width:104px;
+    height:104px;
+    border-radius:50%;
+    object-fit:cover;
+    border:2px solid #ffd43b;
+    background:#111;
 }
 
-/* HEADING */
+/* Brand */
 
-h1{
-font-size:28px;
-font-weight:800;
-line-height:1.2;
-margin-bottom:8px;
-
-background:linear-gradient(90deg,#facc15,#ffffff);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
+.brand{
+    font-size:27px;
+    font-weight:800;
+    letter-spacing:-.8px;
+    margin-bottom:6px;
+    background:linear-gradient(
+        135deg,
+        #fff 20%,
+        #ffe88a 60%,
+        #d4af37
+    );
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
 }
 
-h2{
-font-size:14px;
-font-weight:500;
-opacity:0.85;
-margin-bottom:18px;
-letter-spacing:1px;
+.sub-title{
+    color:#c6c9d2;
+    font-size:13px;
+    margin-bottom:13px;
 }
 
-.desc{
-font-size:14px;
-line-height:1.7;
-opacity:0.85;
-margin-bottom:20px;
+/* Badge */
+
+.badge{
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    padding:7px 14px;
+    border-radius:50px;
+    color:#f8dc78;
+    background:rgba(255,212,59,.08);
+    border:1px solid rgba(255,212,59,.28);
+    font-size:10px;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:.6px;
+    margin-bottom:22px;
 }
 
-/* TRUST */
-
-.trust-box{
-display:flex;
-justify-content:space-between;
-gap:10px;
-margin-bottom:18px;
+.badge i{
+    color:#19d47b;
 }
 
-.trust{
-flex:1;
-background:rgba(255,255,255,0.05);
-padding:12px 10px;
-border-radius:14px;
-border:1px solid rgba(255,255,255,0.06);
-font-size:12px;
-font-weight:600;
+/* CTA */
+
+.telegram-btn{
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:11px;
+    padding:17px 18px;
+    border-radius:16px;
+    text-decoration:none;
+    color:#050505;
+    font-size:16px;
+    font-weight:800;
+    letter-spacing:.2px;
+
+    background:linear-gradient(
+        135deg,
+        #ffe98a 0%,
+        #ffd43b 45%,
+        #c79513 100%
+    );
+
+    box-shadow:
+        0 12px 28px rgba(212,175,55,.25),
+        inset 0 1px 1px rgba(255,255,255,.75);
+
+    transition:.25s ease;
 }
 
-/* BUTTON */
-
-.btn{
-display:block;
-width:100%;
-text-decoration:none;
-
-background:linear-gradient(90deg,#22c55e,#16a34a);
-
-padding:17px;
-border-radius:14px;
-
-font-size:16px;
-font-weight:700;
-color:#fff;
-
-margin:14px 0;
-
-box-shadow:0 10px 25px rgba(34,197,94,0.35);
-
-transition:0.3s;
+.telegram-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:
+        0 16px 32px rgba(212,175,55,.32),
+        inset 0 1px 1px rgba(255,255,255,.8);
 }
 
-.btn:hover{
-transform:translateY(-2px) scale(1.02);
+.telegram-btn:active{
+    transform:scale(.98);
 }
 
-/* FEATURES */
+.telegram-btn i{
+    font-size:21px;
+    color:#168dcc;
+}
+
+/* Small line */
+
+.cta-note{
+    font-size:10px;
+    color:#858b99;
+    margin:9px 0 20px;
+}
+
+/* Features */
 
 .features{
-margin-top:15px;
-text-align:left;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    margin-bottom:15px;
 }
 
 .feature{
-display:flex;
-align-items:center;
-gap:10px;
+    min-height:70px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
 
-background:rgba(255,255,255,0.04);
+    padding:10px 7px;
+    border-radius:15px;
 
-padding:12px;
-border-radius:12px;
+    background:rgba(255,255,255,.035);
+    border:1px solid rgba(255,255,255,.08);
 
-margin-bottom:10px;
-
-font-size:14px;
+    color:#e8e9ee;
+    font-size:11px;
+    font-weight:600;
 }
 
-/* LIVE BOX */
-
-.live{
-margin-top:18px;
-
-background:linear-gradient(90deg,
-rgba(59,130,246,0.15),
-rgba(34,197,94,0.15));
-
-padding:14px;
-border-radius:14px;
-
-border:1px solid rgba(255,255,255,0.08);
-
-font-size:13px;
-line-height:1.7;
+.feature i{
+    font-size:17px;
+    color:#ffd43b;
 }
 
-/* TIMER */
+/* Focus */
 
-.timer{
-margin-top:18px;
-font-size:13px;
-font-weight:700;
-color:#facc15;
-
-animation:blink 1s infinite;
+.focus{
+    padding:12px 10px;
+    border-radius:14px;
+    border:1px dashed rgba(255,212,59,.32);
+    background:rgba(255,212,59,.055);
+    color:#e7c85e;
+    font-size:11px;
+    font-weight:700;
+    margin-bottom:19px;
 }
 
-@keyframes blink{
-50%{
-opacity:0.5;
-}
+.focus i{
+    margin-right:5px;
 }
 
-/* FOOTER */
+/* Disclaimer */
+
+.disclaimer{
+    border-top:1px solid rgba(255,255,255,.09);
+    padding-top:14px;
+
+    color:#8e95a3;
+    font-size:9.5px;
+    line-height:1.55;
+    text-align:justify;
+}
+
+.disclaimer strong{
+    color:#d8b94e;
+}
+
+/* Footer */
 
 .footer{
-margin-top:22px;
-font-size:12px;
-opacity:0.7;
-line-height:1.7;
+    margin-top:14px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:9px;
+    flex-wrap:wrap;
 }
 
 .footer a{
-color:#38bdf8;
-text-decoration:none;
-font-weight:600;
+    color:#777e8c;
+    font-size:9px;
+    text-decoration:none;
 }
 
-.risk{
-margin-top:10px;
-font-size:11px;
-opacity:0.5;
+.footer a:hover{
+    color:#ffd43b;
 }
 
-/* MOBILE */
-
-@media(max-width:480px){
-
-.card{
-padding:26px 18px;
-border-radius:24px;
+.dot{
+    color:#444953;
+    font-size:8px;
 }
 
-h1{
-font-size:24px;
-}
+/* Mobile */
 
-.btn{
-font-size:15px;
-padding:15px;
-}
+@media(max-width:360px){
+
+    .card{
+        padding:27px 15px 20px;
+    }
+
+    .brand{
+        font-size:24px;
+    }
+
+    .features{
+        gap:7px;
+    }
+
+    .feature{
+        font-size:10px;
+    }
 
 }
 
@@ -293,102 +345,149 @@ padding:15px;
 
 <body>
 
-<div class="blur1"></div>
-<div class="blur2"></div>
+<div class="wrapper">
 
 <div class="card">
 
-<div class="top-tag">
-🔥 INDIA'S FAST GROWING TRADING COMMUNITY
+    <!-- Profile -->
+    <div class="logo-box">
+        <div class="logo-glow"></div>
+
+        <img
+            src="https://i.ibb.co/SX0MVLhk/eg6o-Sp-PAY2-Ai-Kepo-LQgu6-C84ln-DGZ5-O-z5-FHk54-T8sm-J3-AQqgo-Wcreg-WUcsp-Hyw-RBvuhf-Ks-Pl-SMb-Xz-Jn09-ZBP.jpg"
+            class="logo"
+            alt="TRADE WITH TITANS"
+        >
+    </div>
+
+    <!-- Brand -->
+    <div class="brand">
+        AdBuildAgency
+    </div>
+
+    <div class="sub-title">
+        Stock Market Learning Community
+    </div>
+
+    <!-- Badge -->
+    <div class="badge">
+        <i class="fa-solid fa-circle-check"></i>
+        Educational Community
+    </div>
+
+    <!-- Telegram CTA -->
+    <a
+        href="https://t.me/+UnlUvjgPgP80OTA9"
+        id="telegram-cta"
+        class="telegram-btn"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        <i class="fa-brands fa-telegram"></i>
+        JOIN FREE TELEGRAM
+    </a>
+
+    <div class="cta-note">
+        Free educational content & market learning resources
+    </div>
+
+    <!-- Features -->
+    <div class="features">
+
+        <div class="feature">
+            <i class="fa-solid fa-book-open"></i>
+            <span>Market Education</span>
+        </div>
+
+        <div class="feature">
+            <i class="fa-solid fa-chart-line"></i>
+            <span>Chart Learning</span>
+        </div>
+
+        <div class="feature">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <span>Trading Basics</span>
+        </div>
+
+        <div class="feature">
+            <i class="fa-solid fa-lightbulb"></i>
+            <span>Market Concepts</span>
+        </div>
+
+    </div>
+
+    <!-- Focus -->
+    <div class="focus">
+        <i class="fa-solid fa-bullseye"></i>
+        Learn • Understand • Improve Market Knowledge
+    </div>
+
+    <!-- Disclaimer -->
+    <div class="disclaimer">
+
+        <strong>Disclaimer:</strong>
+        This page is intended for stock market education and general market
+        awareness only. AdBuildAgency is not a SEBI-registered investment
+        adviser unless otherwise stated. We do not guarantee profits or
+        returns and this page does not constitute personalised investment
+        advice. Trading and investing involve risk. Please make financial
+        decisions carefully and consult a qualified financial professional
+        where appropriate.
+
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+
+        <a href="#">Privacy Policy</a>
+
+        <span class="dot">•</span>
+
+        <a href="#">Terms & Conditions</a>
+
+        <span class="dot">•</span>
+
+        <a href="#">Contact Us</a>
+
+    </div>
+
 </div>
 
-<div class="logo-wrap">
-<img src="https://i.ibb.co/HThtfpR7/Whats-App-Image-2026-01-30-at-8-54-08-PM.jpg" class="logo">
 </div>
 
-<h1>TRADE WITH MUNAAF</h1>
+<script>
 
-<h2>NIFTY • BANKNIFTY • OPTION CALLS</h2>
+document.addEventListener("DOMContentLoaded",function(){
 
-<p class="desc">
-Get daily high-probability intraday setups with
-accurate entries, targets & risk management.
-Perfect for beginners and active traders.
-</p>
+    const button=document.getElementById("telegram-cta");
 
-<div class="trust-box">
+    button.addEventListener("click",function(){
 
-<div class="trust">
-📈 5000+ Active Traders
-</div>
+        if(typeof fbq !== "undefined"){
+            fbq("track","Lead");
+        }
 
-<div class="trust">
-⚡ Live Market Updates
-</div>
+    });
 
-</div>
+});
 
-<!-- BUTTON -->
-
-<a href="https://t.me/+2PsKWi3L1Uk3NjZl" class="btn">
-🚀 JOIN FREE TELEGRAM NOW
-</a>
-
-<!-- FEATURES -->
-
-<div class="features">
-
-<div class="feature">
-✅ 5–7 Premium Setups Daily
-</div>
-
-<div class="feature">
-✅ Exact Entry • SL • Targets
-</div>
-
-<div class="feature">
-✅ Beginner Friendly Guidance
-</div>
-
-<div class="feature">
-✅ Fast News & Live Updates
-</div>
-
-</div>
-
-<!-- LIVE -->
-
-<div class="live">
-🔥 Today's Market Opportunities Are Live <br>
-Join Now Before Free Access Ends
-</div>
-
-<!-- BUTTON -->
-
-<a href="https://t.me/+2PsKWi3L1Uk3NjZl" class="btn">
-💰 START FREE TODAY
-</a>
-
-<div class="timer">
-⏳ Limited Time Free Access
-</div>
-
-<!-- FOOTER -->
-
-<div class="footer">
-
-Powered by
-<a href="https://t.me/+3XoqJNLxYHswNTc1" target="_blank">
-AdsBuild Agency
-</a>
-
-<div class="risk">
-⚠ Market investments are subject to market risk
-</div>
-
-</div>
-
-</div>
-
+</script>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1960967091266074');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1960967091266074&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 </body>
 </html>
